@@ -30,7 +30,7 @@ Also shanties are just fun to sing and so the world should have a few more.
 ***Picture of something Nautical***
 
 ## Data
-In order for a neural net to have a enough data to learn effectively I would need as many shanties as could be found. Given the small niche of the musical styling there are no large repositories of lyrics.
+In order for a neural net to have enough data to learn effectively I would need as many shanties as could be found. Given the small niche of the musical styling there are no large repositories of lyrics.
 
 Instead five sites listing the lyrics of shanties were searched, reviewed, then selected for scraping.
 - https://www.contemplator.com/sea/
@@ -42,10 +42,10 @@ Instead five sites listing the lyrics of shanties were searched, reviewed, then 
 ### Data Collection
 For each site a custom web scraper *relative link to scraping folder* was written to pull the song title and the accompanying lyrics into a csv file.
 
-The tools used for scraping were depending on how the sites were built. Primarily the python [requests](https://requests.readthedocs.io/en/master/) library was used but where sites had dynamic java script the [selenium](https://www.selenium.dev/) webdriver was deployed.
+The tools used for scraping were depending on how the sites were built. Primarily the python [requests](https://requests.readthedocs.io/en/master/) library was used but where sites had dynamic javascript the [selenium](https://www.selenium.dev/) webdriver was deployed.
 
 ### Data Cleaning
-For the neural network to learn the lyrics from each song need to be combined into one large corpus. All on letter characters were removed and every character was converted to lower case as a first pass for model learning.
+For the neural network to learn the lyrics from each song need to be combined into one large corpus. All on letter characters were removed and every character was converted to lowercase as a first pass for model learning.
 
 
 ## Modeling
@@ -80,16 +80,34 @@ In an effort to prevent gibberish from being the output a robust dual layer LSTM
 
 ## Results
 
-***Picture of stylized lyrics if it works***
+![working](./images/Halyards.jpg)
 
-If initial seed characters work play with different output lengths and repetition to simulate call and response characteristic of songs.
+Seed string to base predictions on:
 
+"Washington DC is the best campus of General Assemb"
 
-### Conclusions
-- I'll tell you when I get there
+This forced the model to predict a character on a unfinished word.
+
+For results buy each epoch refer to [lyrics-generator](./code/mode/lyric-generation/lyrics-generator.ipynb) notebook
+
+Epoch 1:
+Washington DC is the best campus of General Assembn the sail the sailor sail the sailor sail the sailor sail the sailor sail the sailor sail the sailo
+
+Epoch 2:
+Washington DC is the best campus of General Assembe the sailor s bootier she s a sailor s bootier the sailor s bootier she s a sailor s bootier the sa
+
+Epoch 7:
+Washington DC is the best campus of General Assembe the sea and the whnds and she s a lan o come all you bold sea bott and she s in the sea and the wh
+
+Epoch 16:
+Washington DC is the best campus of General Assember the sailor loves the sailor loves the bottle oh the sailor loves the bottle oh the sailor loves t
+
+Epoch 20:
+Washington DC is the best campus of General Assember the sailor loves the sea and the ship the sailor loves the sea and the ship the sailor loves the
 
 ### Recommendations and Next Steps
-- Build web applet
-- Ben's idea of data bootstrapping
-- Add in small punctuation
-- Fit model in AWS
+- Rebuild with a less performant model
+- Model with different sequence and step lengths
+- Process data to use words rather then characters
+- Enforce “uncertainty” in predictions
+- Supplement song data by bootstrapping with a thesaurus
