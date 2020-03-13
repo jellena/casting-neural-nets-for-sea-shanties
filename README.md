@@ -1,6 +1,6 @@
 # Casting Neural Nets to Catch a Sea Shanty
 
-***Intro Picture***
+![ship-at-sea](./images/ship-at-sea-01.jpg)
 
 #### Contents:
 - [Introduction](#Introduction)
@@ -17,26 +17,19 @@
 
 
 ## Introduction
-- Brief history of sea shanties
-- Link to song? Embed youtube video?
-- Why do this?
+Sea Shanties are a type of work song used on sailing vessels to help the crew keep in time for tasks such as hauling lines. For a more detailed history please refer to this [wikipedia](https://en.wikipedia.org/wiki/Sea_shanty) article.
 
 One may wonder why spend the time to each a computer to write a sea shanty. To that I say what better way to showcase the capabilities of machine learning then to have a computer write a niche style of working song.
 
-In reality though I wanted to present a project displaying several skillsets. To do this
-I leverage skills from web scraping to machine learning all in python.
+In reality though I wanted to present a project displaying several skillsets.
+
+To do this I leverage skills from web scraping to machine learning all in python.
 
 Also shanties are just fun to sing and so the world should have a few more.
 
 ***Picture of something Nautical***
 
 ## Data
-- List all sites scraped
-- Why these sites?
-- Tools used
- - requests library
- - selenium
-
 In order for a neural net to have a enough data to learn effectively I would need as many shanties as could be found. Given the small niche of the musical styling there are no large repositories of lyrics.
 
 Instead five sites listing the lyrics of shanties were searched, reviewed, then selected for scraping.
@@ -54,25 +47,36 @@ The tools used for scraping were depending on how the sites were built. Primaril
 ### Data Cleaning
 For the neural network to learn the lyrics from each song need to be combined into one large corpus. All on letter characters were removed and every character was converted to lower case as a first pass for model learning.
 
-### Data Dictionary
-- Ask if really needed
 
 ## Modeling
-- Idea on feeding a line
-- What type of neural network
-- Did I manage two models playing off each other out putting call and response?
+[modeling-code](./code/model/model-building/model-building.ipynb)
+
+Model idea and code inspired by and copied from Jason Brownlee at https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/
 
 Idea is to feed in a line and have the model predict a number of characters afterwards in an effort to mimic song writing. Multiple seed lines ordered in different ways can be manipulated to become a chorus to give the songs the call response rhythm that is prevalent in many shanties.
 
 ### Model Preparation
-- A dictionary was created to map each character to a number. This will allow for punctuation to be added in later.
+Model preparation consisted of two main parts
+- Telling the network how to review processed data
+  - Converting characters to something a neural net can learn from
+- Telling the network how to review processed data
 
-- Create a diagram showcasing the sequence and step length.
+#### Data Conversion
+To convert the characters of the corpus into something machine readable a dictionary was created with each unique character being a key and with a number as the value.
+
+Next the data was parsed into 50 character sequences then reshaped as an array. The sequence was then shifted one character, reshaped, and added to the training data set. This process was done for the entire corpus.
+
+
+
+
 
 ### Model Processing
-- Run once in Collab this will be used as a backup of "cloud computing" if AWS doesn't pan out.
 
 LSTM network was chosen for the memory aspects. I wanted the model to be able to remember enough to create a novel lyric.
+
+In an effort to prevent gibberish from being the output a robust dual layer LSTM with dropout was fitted.
+
+
 
 ## Results
 
