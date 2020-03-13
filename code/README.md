@@ -1,5 +1,7 @@
 # Code
 
-scapers: Files for data collection on individual websites
-data-cleaning: Data cleaning and eda
+scapers: files for data collection on individual websites
+
+data-cleaning: data combination and cleaning
+
 model: model building and lyrics generation

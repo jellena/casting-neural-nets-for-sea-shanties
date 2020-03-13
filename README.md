@@ -27,7 +27,7 @@ To do this I leverage skills from web scraping to machine learning all in python
 
 Also shanties are just fun to sing and so the world should have a few more.
 
-***Picture of something Nautical***
+![signing-sailors](./images/singing-sailors.jpg)
 
 ## Data
 In order for a neural net to have enough data to learn effectively I would need as many shanties as could be found. Given the small niche of the musical styling there are no large repositories of lyrics.
@@ -88,21 +88,21 @@ Seed string to base predictions on:
 
 This forced the model to predict a character on a unfinished word.
 
-For results buy each epoch refer to [lyrics-generator](./code/mode/lyric-generation/lyrics-generator.ipynb) notebook
+For results buy each epoch refer to [lyrics-generator](./code/model/lyric-generation/lyrics-generator.ipynb) notebook
 
-Epoch 1:
+-Epoch 1:
 Washington DC is the best campus of General Assembn the sail the sailor sail the sailor sail the sailor sail the sailor sail the sailor sail the sailo
 
-Epoch 2:
+-Epoch 2:
 Washington DC is the best campus of General Assembe the sailor s bootier she s a sailor s bootier the sailor s bootier she s a sailor s bootier the sa
 
-Epoch 7:
+-Epoch 7:
 Washington DC is the best campus of General Assembe the sea and the whnds and she s a lan o come all you bold sea bott and she s in the sea and the wh
 
-Epoch 16:
+-Epoch 16:
 Washington DC is the best campus of General Assember the sailor loves the sailor loves the bottle oh the sailor loves the bottle oh the sailor loves t
 
-Epoch 20:
+-Epoch 20:
 Washington DC is the best campus of General Assember the sailor loves the sea and the ship the sailor loves the sea and the ship the sailor loves the
 
 ### Recommendations and Next Steps
