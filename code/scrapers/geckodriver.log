@@ -1,0 +1,23 @@
+1600194043858	geckodriver	INFO	Listening on 127.0.0.1:58313
+1600194046917	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\jacob\\AppData\\Local\\Temp\\rust_mozprofileoB94HG"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600194048955	Marionette	INFO	Listening on port 58322
+1600194048968	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:58506
+1600194109720	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\jacob\\AppData\\Local\\Temp\\rust_mozprofileNsUrSf"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600194111394	Marionette	INFO	Listening on port 58518
+1600194111767	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1600195662849	geckodriver	INFO	Listening on 127.0.0.1:59984
+1600195665873	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "C:\\Users\\jacob\\AppData\\Local\\Temp\\rust_mozprofileF33TZ0"
+*** You are running in headless mode.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600195667435	Marionette	INFO	Listening on port 59993
+1600195667929	Marionette	WARN	TLS certificate errors will be ignored for this session
