@@ -88,7 +88,7 @@ Seed string to base predictions on:
 
 This forced the model to predict a character on a unfinished word.
 
-For results buy each epoch refer to [lyrics-generator](./code/model/lyric-generation/lyrics-generator.ipynb) notebook
+For results by each epoch refer to [lyrics-generator](./code/model/lyric-generation/lyrics-generator.ipynb) notebook
 
 -Epoch 1:
 Washington DC is the best campus of General Assembn the sail the sailor sail the sailor sail the sailor sail the sailor sail the sailor sail the sailo
