@@ -21,18 +21,14 @@ Sea Shanties are a type of work song used on sailing vessels to help the crew ke
 
 One may wonder why spend the time to each a computer to write a sea shanty. To that I say what better way to showcase the capabilities of machine learning then to have a computer write a niche style of working song.
 
-In reality though I wanted to present a project displaying several skillsets.
-
-To do this I leverage skills from web scraping to machine learning all in python.
-
 Also shanties are just fun to sing and so the world should have a few more.
 
 ![signing-sailors](./images/singing-sailors.jpg)
 
 ## Data
-In order for a neural net to have enough data to learn effectively I would need as many shanties as could be found. Given the small niche of the musical styling there are no large repositories of lyrics.
+Nerual nets are known to be very hungry for data so in order to collect enough for the net to learn from seveal different websites with shanty lyrics were scrapped.
 
-Instead five sites listing the lyrics of shanties were searched, reviewed, then selected for scraping.
+Five sites listing the lyrics of shanties were searched, reviewed, then selected for scraping.
 - https://www.contemplator.com/sea/
 - https://www.karaoke-lyrics.net/lyrics/sea-shanty-56697
 - https://www.sailorsongs.com/index.html
@@ -40,7 +36,7 @@ Instead five sites listing the lyrics of shanties were searched, reviewed, then 
 - http://www.traditionalmusic.co.uk/sea-shanty/0sea-shanty.htm
 
 ### Data Collection
-For each site a custom web scraper *relative link to scraping folder* was written to pull the song title and the accompanying lyrics into a csv file.
+For each site a custom [web scraper](./code/scrapers) was written to pull the song title and the accompanying lyrics into a csv file.
 
 The tools used for scraping were depending on how the sites were built. Primarily the python [requests](https://requests.readthedocs.io/en/master/) library was used but where sites had dynamic javascript the [selenium](https://www.selenium.dev/) webdriver was deployed.
 
