@@ -103,4 +103,4 @@ Washington DC is the best campus of General Assember the sailor loves the sea an
 - Model with different sequence and step lengths
 - Process data to use words rather then characters
 - Enforce “uncertainty” in predictions
-- Supplement song data by bootstrapping with a thesaurus
+- Use Shanty corpus in a pre-trained model such as Gensim
