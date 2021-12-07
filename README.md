@@ -38,18 +38,16 @@ Five sites listing the lyrics of shanties were searched, reviewed, then selected
 ### Data Collection
 For each site a custom [web scraper](./code/scrapers) was written to pull the song title and the accompanying lyrics into a csv file.
 
-The tools used for scraping were depending on how the sites were built. Primarily the python [requests](https://requests.readthedocs.io/en/master/) library was used but where sites had dynamic javascript the [selenium](https://www.selenium.dev/) webdriver was deployed.
+The tools used for scraping were depending on how the sites were built. Primarily the python [requests](https://requests.readthedocs.io/en/master/) library was used but where sites had dynamic javascript the [selenium](https://www.selenium.dev/) webdriver was used as well.
 
 ### Data Cleaning
-For the neural network to learn the lyrics from each song need to be combined into one large corpus. All on letter characters were removed and every character was converted to lowercase as a first pass for model learning.
+Each song was lower cased, had the punctuation removed, and was then added to the final corpus of lyrics.
 
 
 ## Modeling
 [modeling-code](./code/model/model-building/model-building.ipynb)
 
-Model idea and code inspired by and copied from Jason Brownlee at https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/
-
-Idea is to feed in a line and have the model predict a number of characters afterwards in an effort to mimic song writing. Multiple seed lines ordered in different ways can be manipulated to become a chorus to give the songs the call response rhythm that is prevalent in many shanties.
+Model inspiriation by Jason Brownlee at https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/
 
 ### Model Preparation
 Model preparation consisted of two main parts
@@ -68,10 +66,9 @@ Next the data was parsed into 50 character sequences then reshaped as an array. 
 
 ### Model Processing
 
-LSTM network was chosen for the memory aspects. I wanted the model to be able to remember enough to create a novel lyric.
+A LSTM network was chosen for it's ability "remnember" or use previous pieces of data for the current output.
 
 In an effort to prevent gibberish from being the output a robust dual layer LSTM with dropout was fitted.
-
 
 
 ## Results
