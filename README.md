@@ -73,6 +73,7 @@ In an effort to prevent gibberish from being the output a robust dual layer LSTM
 
 ## Results
 
+### Conclusions
 ![working](./images/Halyards.jpg)
 
 Seed string to base predictions on:
